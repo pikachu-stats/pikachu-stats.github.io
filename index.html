@@ -11,10 +11,13 @@
 
 <script>
     const params = new URLSearchParams(window.location.search);
-    const videoUrl = params.get("video");
+    const videoUrl = decodeURIComponent(params.get("video"));
 
-    document.getElementById("vidsrc").src = videoUrl;
-    document.getElementById("player").load();
+    const player = document.getElementById("player");
+    const source = document.getElementById("vidsrc");
+
+    source.src = videoUrl;
+    player.load();
 </script>
 
 </body>
