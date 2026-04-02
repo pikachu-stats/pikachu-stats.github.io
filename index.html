@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Watch Episode</title>
+</head>
+<body style="margin:0;background:black;display:flex;justify-content:center;align-items:center;height:100vh;">
+
+<video controls autoplay id="player" style="width:90%;max-width:1000px;">
+    <source id="vidsrc" src="" type="video/mp4">
+</video>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const videoUrl = params.get("video");
+
+    document.getElementById("vidsrc").src = videoUrl;
+    document.getElementById("player").load();
+</script>
+
+</body>
+</html>
